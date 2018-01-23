@@ -1,0 +1,11 @@
+.gradle
+build
+out
+logs
+target
+.DS_Store
+web-app
+eclipse-build
+.settings
+.classpath
+.project
