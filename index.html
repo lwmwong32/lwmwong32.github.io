@@ -24,6 +24,7 @@ button{
     padding: 5px 5px 10px 5px;
 }
 </style>
+<audio id = "c" src= "click.mp3" preload= "auto"></audio>
 <center><h1> Get Your PromiseCoin Here!</h1>
     <img src= "resources/promisecoinlogo.png"></img>
     <br>
@@ -45,11 +46,8 @@ How many promisecoin would you like to buy?
         <option>Bitcoin</option>
     </select>
 </br>
-    <button>Submit</button></strong></form></center>
+    <button onclick = "document.getElementById('c').play();" >Submit</button></strong></form></center>
 
-<script type="text/javascript">
-    function submitoa() {
-        alert('Your payment has gone through.  Thank you for buying Promisecoin')
-    }
+
 </script>
 </head></html>
