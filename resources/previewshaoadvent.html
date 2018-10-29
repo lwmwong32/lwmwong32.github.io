@@ -6,6 +6,30 @@
     color: white;
     font-family: monospace;
 }
+#holder{
+	position: relative;
+	right:0px;
+	top: 300px;
+}
+#stone{
+		position: relative;
+    -webkit-animation-name: mymove; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: mymove;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    object-position: top 0px;
+    animation-iteration-count: infinite;
+	}
+	@keyframes mymove{
+		0%{right:150px; top:0px;}
+		100%{right:150px; top: 100px;}}
+		
+h1{
+	font-size: 300%;
+	font-family:monospace ;
+}
 p {
     background-color: black;
     color: white;
@@ -25,9 +49,10 @@ button{
 </style>
 </head>
 <body>
-	<video width="400" autoplay controls>
-  <source src="Untitled.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
-<hr>
+	
+<image src = "holder.png" id = "holder">
+	<image src = "stone.png" id = "stone">
+
+<center><h1>Shao's Adventures: The Protecter's Stone</h1></center>
+
 <a href = "Untitled.mp4" download = "preview.mp4"><button>Download this file?</button></a>
