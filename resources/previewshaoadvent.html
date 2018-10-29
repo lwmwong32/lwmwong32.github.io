@@ -1,5 +1,6 @@
 
 <head>
+	<title>Shao's Adventures Preview</title>
 	<style>
 	strong{
     background-color: green;
@@ -10,6 +11,18 @@
 	position: relative;
 	right:0px;
 	top: 300px;
+}
+#featuresbox{
+	position: relative;
+	top: 600px;
+	background-color: black;
+		transition: transform 5s, height 5s, width 5s; 
+
+
+}
+#featuresbox:hover{
+
+	transform:scale(1.1);
 }
 #stone{
 		position: relative;
@@ -50,9 +63,17 @@ button{
 </head>
 <body>
 	
-<image src = "holder.png" id = "holder">
+<image src = "holder.png" id = "holder" >
 	<image src = "stone.png" id = "stone">
+		<center><h1>Shao's Adventures: The Protecter's Stone</h1></center>
+<div id= "featuresbox">
 
-<center><h1>Shao's Adventures: The Protecter's Stone</h1></center>
 
-<a href = "Untitled.mp4" download = "preview.mp4"><button>Download this file?</button></a>
+<image src = "stage.png" id = "features">
+<br>
+<p>Features of Shao's adventures</p>
+<script type="text/javascript">
+	document.getElementById('featuresbox').onclick = function () {
+		window.location.href = "https://lwmwong32.github.io/resources/features.html"
+	}
+</script>
