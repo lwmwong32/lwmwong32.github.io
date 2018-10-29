@@ -86,10 +86,10 @@ function updateGameArea() {
     myBackground.update();
     myBackground.speedX = 0;
     myBackground.speedY = 0;    
-    if (myGameArea.keys && myGameArea.keys[37]) {myBackground.speedX = 1; }
-    if (myGameArea.keys && myGameArea.keys[39]) {myBackground.speedX = -1; }
-    if (myGameArea.keys && myGameArea.keys[38]) {myBackground.speedY = 1; }
-    if (myGameArea.keys && myGameArea.keys[40]) {myBackground.speedY = -1; }
+    if (myGameArea.keys && myGameArea.keys[37]) {myBackground.speedX = 5; }
+    if (myGameArea.keys && myGameArea.keys[39]) {myBackground.speedX = -5; }
+    if (myGameArea.keys && myGameArea.keys[38]) {myBackground.speedY = 5; }
+    if (myGameArea.keys && myGameArea.keys[40]) {myBackground.speedY = -5; }
     myBackground.newPos();    
     myBackground.update();
 }
@@ -130,7 +130,7 @@ function clearmove() {
 </script>
 
 
-<p>The component constructor uses the built-in image object to draw images onto the canvas.</p>
+<p>A small world generated on the canvas. Use arrow keys to move.</p>
 
 </body>
 </html>
