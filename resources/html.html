@@ -1,0 +1,20 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<style></style></head>
+	<body>
+		<canvas id = "canvas" width = "720" height="480"></canvas>
+		<script>
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext("2d");
+			var x = canvas.width / 2;
+			var y = 0;
+			function drawMonster() {
+				y = y - 10
+				ctx.drawImage("baddie.png",x,y )
+			}
+			function hi (){
+				drawMonster();
+			}
+			
+			setInterval(hi,10);
