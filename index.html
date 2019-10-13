@@ -1,53 +1,27 @@
 <!DOCTYPE html>
-<html><head>
-<title>Javaeng</title>
-<style>
-strong{
-    background-color: green;
-    color: white;
-    font-family: monospace;
-}
-p {
-    background-color: black;
-    color: white;
-    font-family: cursive;
-}
-body{
-    background-color:lightblue;
-}
-hr{
-    border: 2px solid;
-    color: black;
-}
-button{
-    background-color: lightgreen;
-    padding: 5px 5px 10px 5px;
-}
-</style>
-<!--Copyright Jan 2018. You may look at the code, but do not pretend it is your own work.-->
-<audio id = "c" src= "resources/click.mp3" preload= "auto"></audio>
-<center><h1> Welcome to Javaeng!</h1>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdAAAAVQAAAB4AAAAAAAAAAAAAADgKGhvKEyMl1gAAAIEAAAArAAAAAAAAAAAAAAAAAAAAAAAAADQbKizORmpu/FaEif0AAABqAAAAAAAAAAIAHSDhIo+c/sH///+o///+e77G/QkREoEAAAAAAAAAAAAAAAAxSEsg1f//++T////X///+DBISVQAAAAAAAAAAACQogBhpcv7e////3f///7X///0AAAAyAAAAAAAAAAAAAAAAAAAAANb//8v//////////5zP1WUAAAAAAAAAAAAAAGQyREX++/////r///9ynKDOAAAAAQAAAAAAAAAAAAAAAAAAAADJ//+a///////////W///yDhERdQAAAEoAAADRvvL4/v//////////dJWYpwAAAAAAAAAAAAAAAAAAAAAAAAAAoczRev////////////////7///7J///+5////v///////////////5jBxcQAAAAAAAAAAAAAAAAAAAAAAAAAAKza33v////+///////////////////////////////////////////A8/nxAAAABgAAAAAAAAAAAAAAAAAAAAC25uuT2P///f////6sxd79OENIkvz///3B4frQYnd/rf////+v0uL8teDq/AAAADYAAAAAAAAAAAAAAAAAAAAAuuzxlP////9zho/9QkVO5AAAAAqQlqnch4yergAAACfw/P/6wt3t/P////9ifH55AAAAAAAAAAAAAAAAAAAAAHmhpcT//////////////2YAAAAAAAAAAQAAAAEAAAAAhq2woPL///7t////d7nAwQAAAAAAAAAAAAAAAAAAAAIbR0zGTJqi/me6w/6J+P9ZAAAAAAAAAAAAAAAAAAAAAB82QDwvhpH9IWlz/R46UvoAAAA2AAAAAAAAAAAAAAA6SjVp/6mu1/+Yl8L/AAAAsAAAAAgAAAAAAAAAAAAAAAAAAAEgkGvN9f////9sZ5DgAAAABQAAAAAAAAAAAAAAAkAyWNf/////usPl+gAAAB0AAAAAAAAAAAAAAAAAAAAAAAAAAFxNgKL/////aW+IhgAAAAAAAAAAAAAAAAAAAAAAAABm9f///6y1zrUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZ+///8DU4QlQAAAAAAAAAAAAAAAAAAAAAAAAAC4OKoPFISVJfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgoLZEAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACUAAAADQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyAAAAHAAAAAAAAAAAwwMAAIIDAACDAwAAwwMAAMAHAADABwAAwAMAAMADAADAAwAAwkMAAIHBAACBwQAAg+MAAMfjAADH8wAA5/MAAA==" rel="icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width">
+    <title>Castle Card Game</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <center><button id = "newgame"  onclick = "javascript:location.reload();">New Game</button>
     <br>
-    <img src = "resources/promisecoinlogo.png" id = "promisecoinlogo"><h3>Not interested in PromiseCoin? Play some gamedesk games!</h3>
-<br>
-<form action = "resources/gamedesk.html">
-<img src = "resources/Gamedesk.png" id = "gamedesk">
-
-</form><br><form action = "emulator/index.html">
-<button> Try out the new emulator!</button>
-<h3>A simple app is here! Download now to try it. Only works for mac os.</h3>
- <a href = "resources/A simple app.zip" download="resources/A simple app.zip"><button>Submit</button></a>
-<a href = "resources/soundtrack.zip" download="soundtrack.zip">Shao's adventures soundtrack.</a>
-<p><strong><center>Update!</strong>
-	<br>
-	<hr>
-	We are updating the site to have a more modern look. New products will also be released. 10/28/2018</center></p>
-</head>
-<script> document.getElementById('promisecoinlogo').onclick = function() {
-	window.location.href = "https://lwmwong32.github.io/resources/promisecoi.html";
-
-} 
-document.getElementById("gamedesk").onclick = function() {
-	window.location.href = "https://lwmwong32.github.io/resources/gamedesk.html";
-}
-</script></strong></p></center></head></html>
+    <h1>Cards in AI's Hand: </h1><h1 id = "aihand"></h1>
+    <div id = "opponentcards"></div>
+    <image class = "transitionup" src = "cardreverse.png" id = "ocastle1">
+      <image class = "transitionup" src = "cardreverse.png" style = "float:right" id = "ocastle2">
+      <image class = "transitionup" src = "cardreverse.png" style = "float:left" id = "ocastle3">
+        <br>
+        <br><br><br><br><br><image src = "cardreverse.png" id = "drawdeck" onclick = "drawcard()"> <div id = "playdeck"></div>
+          <br>
+        <br><br><br><br><br> <image src = "cardreverse.png" id = "pcastle1">
+      <image src = "cardreverse.png" style = "float:right" id = "pcastle2">
+      <image src = "cardreverse.png" style = "float:left" id = "pcastle3">
+        <div id = "playercards"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
