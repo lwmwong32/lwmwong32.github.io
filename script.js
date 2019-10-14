@@ -112,14 +112,21 @@ alert("this is hard")
         higharchy[Number(opponentcards[o].slice(1,3))]){
         lowestvalidcard = opponentcards[o]}}
       if (lowestvalidcard == null){
+        while (lowestvalidcard == null){
+          var cardselected = deck[0];
         opponentcards.push(deck[0]);
-        deck.shift();}
+        deck.shift();
+        if (higharchy[Number(middlecard.slice(1,3))]<= 
+        higharchy[Number(cardselected.slice(1,3))]){
+          lowestvalidcard = selectedcard
+        }
+        }}
         else{
         for (e = 0; e < opponentcards.length; e++){
           if (higharchy[Number(lowestvalidcard.slice(1,3))] > higharchy[Number(opponentcards[e].slice(1,3))] >= higharchy[Number(middlecard.slice(1,3))]){
           lowestvalidcard = opponentcards[e]
           }
-        }
+        }}
          document.getElementById("mid").src = "carddeck/"+lowestvalidcard+".png";
           middlecard= lowestvalidcard
           middlecards.push(lowestvalidcard)
@@ -140,7 +147,7 @@ alert("this is hard")
     
     }
  
-}}
+}
    setInterval(function(){ document.getElementById("aihand").innerHTML = opponentcards.length
 ;
 if (opponentcards.length == 0){
