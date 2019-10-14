@@ -1,5 +1,5 @@
-var difficulty = prompt("Enter difficulty from 1 to 3")
-function shuffle(array) {
+var difficulty = prompt("Enter difficulty from 1 to 3") //Determine Difficulty.
+function shuffle(array) { //shuffle algorithm
   var currentIndex = array.length, temporaryValue, randomIndex;
 
   // While there remain elements to shuffle...
@@ -18,7 +18,15 @@ function shuffle(array) {
   return array;
 }
 
-// Used like so
+/* Setup variables. The higharchy array measures the rank of the cards. lowestvalidcard is set to null, because the middle card is not set yet. middlecards is the cards in the center. deck is the draw deck. castle variables are for your castle. mycards and opponent cards are the cards in your or your opponent's hands. */
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
 var higharchy = [0,11,12,1,2,3,4,5,6,7,13,8,9,10]
 var lowestvalidcard = null
 var middlecards = []
@@ -44,8 +52,8 @@ var mycards = deck.slice(0,7)
 deck.splice(0,7)
 var i;
 for (i = 0; i < mycards.length; i++) { 
- 
-var card = document.createElement("img");
+
+var card = document.createElement("img"); //Loading cards in your hand
 card.src = "carddeck/" + mycards[i] +".png";
 card.setAttribute("id",mycards[i])
 card.setAttribute("width",138);
@@ -96,6 +104,9 @@ function playCard(cardval){
           }
 
       }
+      else{
+        return
+      }
     }
     if (difficulty > 2){
 alert("this is hard")
@@ -104,13 +115,21 @@ alert("this is hard")
       var e;
       var opponentmove;
       if (middlecard == null){
-        middlecard == opponentcards[0]
+        middlecard == opponentcards[0];
+        opponentcards.shift();
       }
       else{
+        alert(opponentcards)
       for (o=0; o < opponentcards.length;o++){
-        if (higharchy[Number(middlecard.slice(1,3))]<= 
+        if (lowestvalidcard == null){
+          if (higharchy[Number(middlecard.slice(1,3))]<= 
         higharchy[Number(opponentcards[o].slice(1,3))]){
-        lowestvalidcard = opponentcards[o]}}
+          lowestvalidcard = opponentcards[o]
+        }}
+        else{
+        if (higharchy[Number(middlecard.slice(1,3))]<= 
+        higharchy[Number(opponentcards[o].slice(1,3))] && higharchy[Number(opponentcards[0].slice(1,3))] < higharchy[Number(lowestvalidcard.slice(1,3))]){
+        lowestvalidcard = opponentcards[o]}}}
       if (lowestvalidcard == null){
         while (lowestvalidcard == null){
           var cardselected = deck[0];
@@ -118,25 +137,25 @@ alert("this is hard")
         deck.shift();
         if (higharchy[Number(middlecard.slice(1,3))]<= 
         higharchy[Number(cardselected.slice(1,3))]){
-          lowestvalidcard = selectedcard
+          lowestvalidcard = selectedcard;
         }
         }}
         else{
         for (e = 0; e < opponentcards.length; e++){
           if (higharchy[Number(lowestvalidcard.slice(1,3))] > higharchy[Number(opponentcards[e].slice(1,3))] >= higharchy[Number(middlecard.slice(1,3))]){
-          lowestvalidcard = opponentcards[e]
+          lowestvalidcard = opponentcards[e];
           }
         }}
          document.getElementById("mid").src = "carddeck/"+lowestvalidcard+".png";
-          middlecard= lowestvalidcard
-          middlecards.push(lowestvalidcard)
-          opponentcards.splice(Number(opponentcards.indexOf(lowestvalidcard)),1)
+          middlecard= lowestvalidcard;
+          middlecards.push(lowestvalidcard);
+          opponentcards.splice(Number(opponentcards.indexOf(lowestvalidcard)),1);
 
           document.getElementById("aihand").innerHTML = opponentcards.length
           if (Number(middlecard.slice(1,3)) == 10){
-            middlecard = null
-            deck = deck.concat(middlecards)
-            deck = shuffle(deck)
+            middlecard = null;
+            deck = deck.concat(middlecards);
+            deck = shuffle(deck);
             middlecards = []
             document.getElementById('mid').remove();
 
@@ -148,7 +167,7 @@ alert("this is hard")
     }
  
 }
-   setInterval(function(){ document.getElementById("aihand").innerHTML = opponentcards.length
+   setInterval(function(){ document.getElementById("aihand").innerHTML = opponentcards.length;
 ;
 if (opponentcards.length == 0){
   alert ("Ai wins.")
