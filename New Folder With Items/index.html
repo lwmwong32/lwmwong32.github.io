@@ -1,0 +1,28 @@
+-<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdAAAAVQAAAB4AAAAAAAAAAAAAADgKGhvKEyMl1gAAAIEAAAArAAAAAAAAAAAAAAAAAAAAAAAAADQbKizORmpu/FaEif0AAABqAAAAAAAAAAIAHSDhIo+c/sH///+o///+e77G/QkREoEAAAAAAAAAAAAAAAAxSEsg1f//++T////X///+DBISVQAAAAAAAAAAACQogBhpcv7e////3f///7X///0AAAAyAAAAAAAAAAAAAAAAAAAAANb//8v//////////5zP1WUAAAAAAAAAAAAAAGQyREX++/////r///9ynKDOAAAAAQAAAAAAAAAAAAAAAAAAAADJ//+a///////////W///yDhERdQAAAEoAAADRvvL4/v//////////dJWYpwAAAAAAAAAAAAAAAAAAAAAAAAAAoczRev////////////////7///7J///+5////v///////////////5jBxcQAAAAAAAAAAAAAAAAAAAAAAAAAAKza33v////+///////////////////////////////////////////A8/nxAAAABgAAAAAAAAAAAAAAAAAAAAC25uuT2P///f////6sxd79OENIkvz///3B4frQYnd/rf////+v0uL8teDq/AAAADYAAAAAAAAAAAAAAAAAAAAAuuzxlP////9zho/9QkVO5AAAAAqQlqnch4yergAAACfw/P/6wt3t/P////9ifH55AAAAAAAAAAAAAAAAAAAAAHmhpcT//////////////2YAAAAAAAAAAQAAAAEAAAAAhq2woPL///7t////d7nAwQAAAAAAAAAAAAAAAAAAAAIbR0zGTJqi/me6w/6J+P9ZAAAAAAAAAAAAAAAAAAAAAB82QDwvhpH9IWlz/R46UvoAAAA2AAAAAAAAAAAAAAA6SjVp/6mu1/+Yl8L/AAAAsAAAAAgAAAAAAAAAAAAAAAAAAAEgkGvN9f////9sZ5DgAAAABQAAAAAAAAAAAAAAAkAyWNf/////usPl+gAAAB0AAAAAAAAAAAAAAAAAAAAAAAAAAFxNgKL/////aW+IhgAAAAAAAAAAAAAAAAAAAAAAAABm9f///6y1zrUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZ+///8DU4QlQAAAAAAAAAAAAAAAAAAAAAAAAAC4OKoPFISVJfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgoLZEAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACUAAAADQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyAAAAHAAAAAAAAAAAwwMAAIIDAACDAwAAwwMAAMAHAADABwAAwAMAAMADAADAAwAAwkMAAIHBAACBwQAAg+MAAMfjAADH8wAA5/MAAA==" rel="icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width">
+    <title>Castle Card Game</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <center><button id = "newgame"  onclick = "javascript:location.reload();">New Game</button>
+    <br>
+    <h1>Cards in AI's Hand: </h1><h1 id = "aihand"></h1>
+    <p>This site is no longer going to get future updates. To play the latest and greatest version of castle, go <a href = "https://justinhjwong.github.io/CastleCardGame">here.</a></p> 
+    <div id = "opponentcards"></div>
+    <image class = "transitionup" src = "cardreverse.png" id = "ocastle1">
+      <image class = "transitionup" src = "cardreverse.png" style = "float:right" id = "ocastle2">
+      <image class = "transitionup" src = "cardreverse.png" style = "float:left" id = "ocastle3">
+        <br>
+        <br><br><br><br><br><image src = "cardreverse.png" id = "drawdeck" onclick = "drawcard()"> <div id = "playdeck"></div>
+          <br>
+        <br><br><br><br><br> <image src = "cardreverse.png" id = "pcastle1">
+      <image src = "cardreverse.png" style = "float:right" id = "pcastle2">
+      <image src = "cardreverse.png" style = "float:left" id = "pcastle3">
+        <div id = "playercards"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
